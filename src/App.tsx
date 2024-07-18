@@ -1,5 +1,6 @@
 import { Route,Routes, BrowserRouter } from "react-router-dom";
 import { Login } from "./pages/Login";
+import AuthLayout from "./Layout/AuthLayout";
 function App() {
   
 
@@ -9,9 +10,8 @@ function App() {
       
           <Routes>
           {/* rutas publicas */}
-            <Route path='/' element={<Login/>}>
-              {/* <Route index element={<Login/>}/> */}
-              
+            <Route path='/' element={<AuthLayout/>}>
+              <Route index element={<Login/>}/>
             </Route>
           
             
