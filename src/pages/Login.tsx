@@ -1,3 +1,4 @@
+import { ButtonLogin } from "../components/register/ButtonLogin"
 import { ButtonLogin } from "../components/ButtonLogin"
 import FormLogin  from "../components/FormLogin"
 export const Login = () => {
