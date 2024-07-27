@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ButtonLogin } from './ButtonLogin';
+import {ButtonLogin} from './register/ButtonLogin';
 
 const FormLogin: React.FC = () => {
     const [email, setEmail] = useState('');
@@ -30,7 +30,7 @@ const FormLogin: React.FC = () => {
                 <label htmlFor="password" className="text-white text-left text-lg m-1 font-sans font-bold">Contraseña:</label>
                 <input type="password" id="password" value={password} onChange={handlePasswordChange} className='rounded md:w-4/5 m-1'/>
             </div>
-            <ButtonLogin name="Iniciar Sesión" />
+        <ButtonLogin name="Iniciar Sesión" />
         </form>
     );
 };

@@ -2,6 +2,7 @@ import { Route,Routes, BrowserRouter } from "react-router-dom";
 import { Login } from "./pages/Login";
 import AuthLayout from "./Layout/AuthLayout";
 import Register from "./pages/Register";
+import { InicioSesion } from "./pages/InicioSesion";
 function App() {
   
 
@@ -13,7 +14,8 @@ function App() {
           {/* rutas publicas */}
             <Route path='/' element={<AuthLayout/>}>
               <Route index element={<Register/>}/>
-              <Route path='login' element={<Login/>}/>
+              <Route path='login' element={<InicioSesion/>}/>
+            
             </Route>
           
             
