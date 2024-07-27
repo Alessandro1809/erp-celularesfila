@@ -1,5 +1,5 @@
 
-import FormLogin from "../components/FormLogin"
+import FormLogin from "../components/login/FormLogin"
 import { InfoScreen } from "../components/register/InfoScreen"
 import { Techone } from "../components/register/Techone"
 

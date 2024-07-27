@@ -17,17 +17,10 @@ function App() {
             <Route path='/' element={<AuthLayout/>}>
               <Route index element={<Register/>}/>
               <Route path='login' element={<InicioSesion/>}/>
-            
+              <Route path="/ForgotPassword" element={<ForgotPassword/>}/>
+              <Route path="/NewPassword" element={<NewPassword/>}/>
             </Route>
 
-            <Route path='/ForgotPassword' element={<AuthLayout/>}>
-              <Route index element={<ForgotPassword/>}/>
-            </Route>
-
-            <Route path='/NewPassword' element={<AuthLayout/>}>
-              <Route index element={<NewPassword/>}/>
-            </Route>
-          
             
             {/* <Route path='admin' element={<RutaProtegida/>}>
               <Route index element={<AdministrarPacientes/>} />

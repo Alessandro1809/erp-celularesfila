@@ -1,6 +1,6 @@
-import { ButtonLogin } from "../components/register/ButtonLogin"
+
 //import { ButtonLogin } from "../components/ButtonLogin"
-import FormLogin  from "../components/FormLogin"
+import FormLogin  from "../components/login/FormLogin"
 export const Login = () => {
   //aqui se pasan las props
   return (

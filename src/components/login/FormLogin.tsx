@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {ButtonLogin} from './register/ButtonLogin';
+import {ButtonLogin} from '../register/ButtonLogin';
 
 const FormLogin: React.FC = () => {
     const [email, setEmail] = useState('');

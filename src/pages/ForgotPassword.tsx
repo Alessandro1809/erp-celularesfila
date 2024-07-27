@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { GradientButton } from '../components/GradientButton';
-import { Logo } from '../components/Logo';
+import { GradientButton } from '../components/Password/GradientButton';
+import { Logo } from '../components/Password/Logo';
 import clienteAxios from '../config/axios';
-import { Alert } from '../components/Alert';
+import { Alert } from '../components/Password/Alert';
 import axios from 'axios';
 
 export const ForgotPassword = () => {
@@ -22,7 +22,7 @@ export const ForgotPassword = () => {
 
 
         try {
-            const { data } = await clienteAxios.post('/     ', { email });
+            const { data } = await clienteAxios.post('/', { email });
             setAlert({ mensaje: data.msg, error: false });
             setTimeout(() => {
                 setAlert({ mensaje: '' });
@@ -57,7 +57,7 @@ export const ForgotPassword = () => {
 
     return (
         <>
-            <div className="flex flex-col justify-center items-center min-h-screen w-full p-4">
+            <div className="flex flex-col justify-center items-center min-h-screen w-full p-4 animate-blurred-fade-in">
                 <Logo />
                 <h1 className="text-3xl md:text-5xl font-bold text-center text-white mb-6 font-josefin">
                     ¡Vamos a reestablecer tu contraseña!
