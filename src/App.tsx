@@ -13,6 +13,7 @@ function App() {
           {/* rutas publicas */}
             <Route path='/' element={<AuthLayout/>}>
               <Route index element={<Register/>}/>
+              <Route path='login' element={<Login/>}/>
             </Route>
           
             
