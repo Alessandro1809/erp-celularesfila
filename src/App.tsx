@@ -3,6 +3,7 @@ import { Login } from "./pages/Login";
 import { ForgotPassword } from "./pages/ForgotPassword";
 import { NewPassword } from "./pages/NewPassword";
 import AuthLayout from "./Layout/AuthLayout";
+import Register from "./pages/Register";
 function App() {
   
 
@@ -13,7 +14,8 @@ function App() {
           <Routes>
           {/* rutas publicas */}
             <Route path='/' element={<AuthLayout/>}>
-              <Route index element={<Login/>}/>
+              <Route index element={<Register/>}/>
+              <Route path='login' element={<Login/>}/>
             </Route>
 
             <Route path='/ForgotPassword' element={<AuthLayout/>}>
