@@ -29,8 +29,6 @@ const Register = () => {
         
     });
     
-
-    
     const [validName, setValidName] = useState(false);
     const [userFocus, setUserFocus] = useState(false);
 
