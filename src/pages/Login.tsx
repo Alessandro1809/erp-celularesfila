@@ -1,4 +1,4 @@
-import { ButtonLogin } from "../components/ButtonLogin"
+import { ButtonLogin } from "../components/register/ButtonLogin"
 export const Login = () => {
   //aqui se pasan las props
   return (

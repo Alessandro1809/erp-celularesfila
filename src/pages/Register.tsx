@@ -1,21 +1,36 @@
 import { useRef, useState, useEffect } from "react";
 //import {faCheck, faTimes, faInfoCircle} from '@fortawesome/free-solid-svg-icons'
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ButtonRegister} from "../components/ButtonRegister";
-import { Techone } from "../components/Techone";
-import { InfoScreen } from "../components/InfoScreen";
-import { InfoScreen3 } from "../components/InfoScreen3";
-import { Logos } from "../components/Logos";
-
+import { ButtonRegister} from "../components/register/ButtonRegister";
+import { Techone } from "../components/register/Techone";
+import { InfoScreen } from "../components/register/InfoScreen";
+import { InfoScreen3 } from "../components/register/InfoScreen3";
+import { Logos } from "../components/register/Logos";
+import { User } from '../types/TypeLogin';
+// import { type User } from "../types/TypeLogin";
 const Register = () => {
     //aqui se pasan las props
+    // const usuario: User = {
+    //     id: 0,
+    //     name: '',
+    //     email: '',
+    //     address: '',
+    //     phone: '',
+    //     website: '',
+    //     company: ''
+    // }
 
     const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
     const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
     const userRef = useRef<HTMLInputElement | null>(null);
 
-    const [user, setUser] = useState('');
+    const [user, setUser] = useState({
+        
+    });
+    
+
+    
     const [validName, setValidName] = useState(false);
     const [userFocus, setUserFocus] = useState(false);
 
@@ -53,26 +68,29 @@ const Register = () => {
   return (
     <>
 
-    <div className="flex col md:flex-row">
+    <div className="flex flex-col  md:flex-row py-20 animate-blurred-fade-in">
 
-        <div className="flex flex-col justify-center w-full ml-10 space-y-6 ml-32">
+        <div className="flex flex-col justify-center w-full space-y-6 mx-auto md:ml-32 animate-blurred-fade-in">
 
             <Techone name = "TECHONE"/>
-            <InfoScreen name="Regístrate y empieza a gestionar de la mejor manera tu negocio"/>
-            <InfoScreen3 name="Puedes también registrarte por medio de:"/>
+            <span className="text-center md:text-left">
+                <InfoScreen name="Regístrate y empieza a gestionar de la mejor manera tu negocio"/>
+                <InfoScreen3 name="Puedes también registrarte por medio de:"/>
+            </span>
             <Logos />
 
         </div> 
 
-        <div className="flex justify-center items-center min-h-screen w-full ">
-            <section className="w-full md:w-3/4 lg:w-1/2 xl:w-2/3 p-4 ">
+        <div className="flex justify-center items-center h-auto w-full animate-blurred-fade-in ">
+            <section className="w-full md:w-full lg:w-full xl:w-full p-4 ">
 
-            <h1 className="text-3xl font-bold text-white rounded-md mb-4">Registro</h1>
-
-                <section>
-                    <div className="flex flex-col justify-center w-full max-w-lg mt-5 bg-[#82F7FF]/[17%] rounded-md border border-[#38FF88] p-4 ">
-        
-                     <form className="flex flex-col justify-center w-full max-w-lg mt-0 space-y-3 rounded-md text-white">
+            
+            
+                <section className="flex flex-col">
+                
+                    <div className="flex flex-col justify-center w-full  mt-5 bg-[#82F7FF]/[17%] rounded-md border border-[#38FF88] p-4 ">
+                    <p className="text-3xl font-bold text-white rounded-md mb-4">Registro</p>
+                     <form className=" flex flex-col justify-center w-full mt-0 space-y-3 rounded-md text-white p-4">
         
                         <label htmlFor="username">Nombre:</label>
                         <input className="rounded-md bg-[#D9D9D9] h-10 text-black/80 p-2"
