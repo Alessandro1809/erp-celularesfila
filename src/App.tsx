@@ -4,6 +4,7 @@ import { ForgotPassword } from "./pages/ForgotPassword";
 import { NewPassword } from "./pages/NewPassword";
 import AuthLayout from "./Layout/AuthLayout";
 import Register from "./pages/Register";
+import { InicioSesion } from "./pages/InicioSesion";
 function App() {
   
 
@@ -15,7 +16,8 @@ function App() {
           {/* rutas publicas */}
             <Route path='/' element={<AuthLayout/>}>
               <Route index element={<Register/>}/>
-              <Route path='login' element={<Login/>}/>
+              <Route path='login' element={<InicioSesion/>}/>
+            
             </Route>
 
             <Route path='/ForgotPassword' element={<AuthLayout/>}>
