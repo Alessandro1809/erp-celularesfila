@@ -1,6 +1,7 @@
 import { Route,Routes, BrowserRouter } from "react-router-dom";
 import { Login } from "./pages/Login";
 import AuthLayout from "./Layout/AuthLayout";
+import { InicioSesion } from "./pages/InicioSesion";
 function App() {
   
 
@@ -12,7 +13,9 @@ function App() {
           {/* rutas publicas */}
             <Route path='/' element={<AuthLayout/>}>
               <Route index element={<Login/>}/>
+              <Route path='iniciar-sesion' element={<InicioSesion/>}/>
             </Route>
+
           
             
             {/* <Route path='admin' element={<RutaProtegida/>}>

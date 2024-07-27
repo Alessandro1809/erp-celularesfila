@@ -6,7 +6,7 @@ interface Props {
 export const ButtonLogin = (props: Props) => {
   return (
     <>
-      <button className="w-full bg-blue-600 text-white p-3 rounded-full font-bold uppercase hover:bg-blue-700">{props.name}</button>
+      <button className=" md:w-1/2 bg-blue-600 text-white p-1 rounded font-bold uppercase m-2 hover:bg-blue-700">{props.name}</button>
     </>
   )
 }
