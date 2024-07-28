@@ -7,7 +7,7 @@ import { InfoScreen } from "../components/register/InfoScreen";
 import { InfoScreen3 } from "../components/register/InfoScreen3";
 import { Logos } from "../components/register/Logos";
 import { User } from '../types/TypeLogin';
-// import { type User } from "../types/TypeLogin";
+import { type User } from "../types/TypeLogin";
 const Register = () => {
     //aqui se pasan las props
     // const usuario: User = {
