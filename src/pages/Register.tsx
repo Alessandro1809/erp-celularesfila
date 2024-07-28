@@ -7,7 +7,7 @@ import { InfoScreen } from "../components/register/InfoScreen";
 import { InfoScreen3 } from "../components/register/InfoScreen3";
 import { Logos } from "../components/register/Logos";
 import { User } from '../types/TypeLogin';
-import { type User } from "../types/TypeLogin";
+//import { type User } from "../types/TypeLogin";
 const Register = () => {
     //aqui se pasan las props
     // const usuario: User = {
@@ -47,12 +47,12 @@ const Register = () => {
         userRef.current?.focus();
     }, []);
 
-    useEffect(() => {
-        const result = USER_REGEX.test(user);
-        console.log(result);
-        console.log(user);
-        setValidName(result);
-    }, [user]);
+    // useEffect(() => {
+    //     const result = USER_REGEX.test(user);
+    //     console.log(result);
+    //     console.log(user);
+    //     setValidName(result);
+    // }, [user]);
 
     useEffect(() => {
         const result = PWD_REGEX.test(pwd);
