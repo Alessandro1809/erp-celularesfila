@@ -7,7 +7,7 @@ import { InfoScreen } from "../components/register/InfoScreen";
 import { InfoScreen3 } from "../components/register/InfoScreen3";
 import { Logos } from "../components/register/Logos";
 import { User } from '../types/TypeLogin';
-//import { type User } from "../types/TypeLogin";
+// import { type User } from "../types/TypeLogin";
 const Register = () => {
     //aqui se pasan las props
     // const usuario: User = {
@@ -151,7 +151,7 @@ const Register = () => {
                         <section className="mt-4">
                             <ButtonRegister name="Registrarme"/>
                         
-                            <p className="text-white">¿Ya tienes una cuenta? <a href="#" className="text-[#2BFF7F]">Inicia Sesión</a></p>
+                            <p className="text-white">¿Ya tienes una cuenta? <a href="login" className="text-[#2BFF7F]">Inicia Sesión</a></p>
                         </section>
                     </div>
                 </section>
