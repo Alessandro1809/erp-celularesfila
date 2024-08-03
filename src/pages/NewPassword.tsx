@@ -4,6 +4,7 @@ import { GradientButton } from '../components/Password/GradientButton';
 import { Logo } from '../components/Password/Logo';
 import clienteAxios from '../config/axios';
 import { Alert } from '../components/Password/Alert';
+import { AxiosError } from 'axios';
 
 interface AlertType {
     mensaje: string;
@@ -50,7 +51,7 @@ export const NewPassword = () => {
             const { data } = await clienteAxios.post(url, { password });
             setAlert({ mensaje: data.msg, error: false });
             setPasswordModificado(true);
-        } catch (error: any) {
+        } catch (error:AxiosError) {
             setAlert({ mensaje: error.response?.data?.msg || 'ha ocurrido un error', error: true });
         }
     };
