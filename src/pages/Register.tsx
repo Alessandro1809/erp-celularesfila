@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import {  useState } from "react";
 import { ButtonRegister } from "../components/register/ButtonRegister";
 import { Techone } from "../components/register/Techone";
 import { InfoScreen } from "../components/register/InfoScreen";
@@ -21,15 +21,11 @@ const Register = () => {
     const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
-    const userRef = useRef<HTMLInputElement | null>(null);
+  
     const [user, setUser] = useState(userUnknown);
     const [pwd, setPwd] = useState('');
     const [matchPwd, setMatchPwd] = useState('');
     const [errMsg, setErrMsg] = useState('');
-
-    useEffect(() => {
-        userRef.current?.focus();
-    }, []);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -80,7 +76,6 @@ const Register = () => {
                                         type="text"
                                         id="name"
                                         placeholder="Jhon Doe"
-                                        ref={userRef}
                                         autoComplete="off"
                                         onChange={(e) => setUser({ ...user, name: e.target.value })}
                                         required
