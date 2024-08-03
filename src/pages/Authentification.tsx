@@ -2,6 +2,7 @@ import { Title } from "../components/register/Title";
 import { Subtitle } from "../components/register/Subtitle";
 import { Information } from "../components/register/Information";
 import { ButtonLogin } from "../components/login/ButtonLogin";
+import { Link } from "react-router-dom";
 
 const Authentification = () => {
   return (
@@ -16,7 +17,9 @@ const Authentification = () => {
 
             <section className="mt-20">
                 {/* Falta el Link*/}
-                <ButtonLogin name="Iniciar sesión"/>
+                <Link className=" bg-gradient-to-r from-gray-100 to-green-500 text-black font-bold py-6 px-8 rounded-md shadow-lg my-3 text-sm md:text-lg lg:text-xl transition-all duration-1000 animate-blurred-fade-in " to="/login">
+                Iniciar sesión
+                </Link>
             </section>
 
             <section className="text-center items-top h-screen w-full mt-20">
