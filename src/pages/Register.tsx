@@ -1,8 +1,8 @@
 import {  useState } from "react";
 import { ButtonRegister } from "../components/register/ButtonRegister";
-import { Techone } from "../components/register/Techone";
-import { InfoScreen } from "../components/register/InfoScreen";
-import { InfoScreen3 } from "../components/register/InfoScreen3";
+import { Title } from "../components/register/Title";
+import { Subtitle } from "../components/register/Subtitle";
+import { Information } from "../components/register/Information";
 import { Logos } from "../components/register/Logos";
 import { type User } from "../types/TypeLogin";
 
@@ -19,7 +19,6 @@ const Register = () => {
     
     const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
     const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
   
     const [user, setUser] = useState(userUnknown);
@@ -27,19 +26,18 @@ const Register = () => {
     const [matchPwd, setMatchPwd] = useState('');
     const [errMsg, setErrMsg] = useState('');
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement> | React.FormEvent<HTMLButtonElement> ) => {
         e.preventDefault();
         
         const isValidUser = USER_REGEX.test(user.name);
         const isValidEmail = EMAIL_REGEX.test(user.email);
-        const isValidPwd = PWD_REGEX.test(pwd);
         const isPwdMatch = pwd === matchPwd;
 
         if (!isValidUser || !isValidEmail) {
             setErrMsg("Parece que algunos de tus datos son inválidos");
             return;
         }
-        if (isValidPwd != isPwdMatch) {
+        if (!isPwdMatch) {
             setErrMsg("Las contraseñas no coinciden");
             return;
         }
@@ -53,10 +51,10 @@ const Register = () => {
         <>
             <div className="flex flex-col md:flex-row py-20 animate-blurred-fade-in">
                 <div className="flex flex-col justify-center w-full space-y-6 mx-auto md:ml-32 animate-blurred-fade-in">
-                    <Techone name="TECHONE" />
+                    <Title name="TECHONE" />
                     <span className="text-center md:text-left">
-                        <InfoScreen name="Regístrate y empieza a gestionar de la mejor manera tu negocio" />
-                        <InfoScreen3 name="Puedes también registrarte por medio de:" />
+                        <Subtitle name="Regístrate y empieza a gestionar de la mejor manera tu negocio" />
+                        <Information name="Puedes también registrarte por medio de:" />
                     </span>
                     <Logos />
                 </div> 
@@ -122,7 +120,7 @@ const Register = () => {
                                         required
                                     />
                                     {errMsg && <p className="text-red-500">{errMsg}</p>}
-                                    <ButtonRegister name="Registrarme" />
+                                    <ButtonRegister name="Registrarme" action={handleSubmit}/>
                                 </form>
                                 <section className="mt-4">
                                     <p className="text-white">¿Ya tienes una cuenta? <a href="/login" className="text-[#2BFF7F]">Inicia Sesión</a></p>
