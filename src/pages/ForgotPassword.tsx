@@ -83,7 +83,7 @@ export const ForgotPassword = () => {
                         </div>
                     </form>
                     <p className="text-left text-white mt-4 font-josefin">
-                        ¿Ya tienes una cuenta? <a href="/" className="text-custom-green-text hover:underline font-josefin">Inicia sesión</a>
+                        ¿Ya tienes una cuenta? <a href="login" className="text-custom-green-text hover:underline font-josefin">Inicia sesión</a>
                     </p>
                 </section>
                 <h1 className="text-xl md:text-2xl font-bold text-center text-white mt-6 font-josefin">

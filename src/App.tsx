@@ -15,7 +15,12 @@ function App() {
           {/* rutas publicas */}
             <Route path='/' element={<AuthLayout/>}>
               <Route index element={<Register/>}/>
+
+              <Route path='Register' element={<Register/>}/>
+              <Route path='login' element={<InicioSesion/>}/>
+
               <Route path='/login' element={<InicioSesion/>}/>
+
               <Route path="/ForgotPassword" element={<ForgotPassword/>}/>
               <Route path="/NewPassword" element={<NewPassword/>}/>
             </Route>
