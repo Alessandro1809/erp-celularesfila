@@ -1,7 +1,7 @@
 
 import FormLogin from "../components/login/FormLogin"
-import { InfoScreen } from "../components/register/InfoScreen"
-import { Techone } from "../components/register/Techone"
+import { InfoScreen } from "../components/register/Subtitle"
+import { Techone } from "../components/register/Title"
 
 export const InicioSesion = () => {
   //aqui se pasan las props

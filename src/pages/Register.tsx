@@ -2,9 +2,9 @@ import { useRef, useState, useEffect } from "react";
 //import {faCheck, faTimes, faInfoCircle} from '@fortawesome/free-solid-svg-icons'
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ButtonRegister} from "../components/register/ButtonRegister";
-import { Techone } from "../components/register/Techone";
-import { InfoScreen } from "../components/register/InfoScreen";
-import { InfoScreen3 } from "../components/register/InfoScreen3";
+import { Techone } from "../components/register/Title";
+import { InfoScreen } from "../components/register/Subtitle";
+import { InfoScreen3 } from "../components/register/Information";
 import { Logos } from "../components/register/Logos";
 import { User } from '../types/TypeLogin';
 // import { type User } from "../types/TypeLogin";
@@ -47,12 +47,12 @@ const Register = () => {
         userRef.current?.focus();
     }, []);
 
-    useEffect(() => {
-        const result = USER_REGEX.test(user);
-        console.log(result);
-        console.log(user);
-        setValidName(result);
-    }, [user]);
+    // useEffect(() => {
+    //     const result = USER_REGEX.test(user);
+    //     console.log(result);
+    //     console.log(user);
+    //     setValidName(result);
+    // }, [user]);
 
     useEffect(() => {
         const result = PWD_REGEX.test(pwd);
@@ -79,8 +79,8 @@ const Register = () => {
 
         </div> 
 
-        <div className="flex justify-center items-center h-auto w-full animate-blurred-fade-in ">
-            <section className="w-full md:w-full lg:w-full xl:w-full p-4 ">
+        <div className="flex justify-center items-center h-auto w-full animate-blurred-fade-in md:mr-4">
+            <section className="w-full md:w-full lg:w-full xl:w-full p-4">
 
             
             
@@ -149,6 +149,7 @@ const Register = () => {
                      </form>
                      
                         <section className="mt-4">
+                            {/* Falta el Link*/}
                             <ButtonRegister name="Registrarme"/>
                         
                             <p className="text-white">¿Ya tienes una cuenta? <a href="#" className="text-[#2BFF7F]">Inicia Sesión</a></p>
