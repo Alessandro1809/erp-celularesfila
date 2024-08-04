@@ -1,5 +1,5 @@
 import { GradientButton } from '../components/Password/GradientButton';
-import { Techone } from '../components/register/Techone';
+import { Title } from '../components/register/Title';
 import { Alert } from '../components/Password/Alert';
 import { useForgotPassword } from '../hooks/useForgotPassword';
 
@@ -10,7 +10,7 @@ export const ForgotPassword = () => {
     return (
         <>
             <div className="flex flex-col justify-center items-center min-h-screen w-full p-4 animate-blurred-fade-in">
-                <Techone name="TECHONE" />
+                <Title name="TECHONE" />
                 <h1 className="text-3xl md:text-5xl font-bold text-center text-white mb-6 font-josefin">
                     ¡Vamos a reestablecer tu contraseña!
                 </h1>
@@ -35,7 +35,7 @@ export const ForgotPassword = () => {
                         </div>
                     </form>
                     <p className="text-left text-white mt-4 font-josefin">
-                        ¿Ya tienes una cuenta? <a href="/" className="text-custom-green-text hover:underline font-josefin">Inicia sesión</a>
+                        ¿Ya tienes una cuenta? <a href="login" className="text-custom-green-text hover:underline font-josefin">Inicia sesión</a>
                     </p>
                 </section>
                 <h1 className="text-xl md:text-2xl font-bold text-center text-white mt-6 font-josefin">

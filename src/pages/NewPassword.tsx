@@ -1,21 +1,27 @@
-import { useParams, Link } from 'react-router-dom';
+import { useNewPassword } from '../hooks/useNewPassword';
+import { Link } from 'react-router-dom';
 import { GradientButton } from '../components/Password/GradientButton';
-import { Techone } from '../components/register/Techone';
+import { Title } from '../components/register/Title';
 import { Alert } from '../components/Password/Alert';
-import { useTokenValidation } from '../hooks/useTokenValidation';
-import { usePasswordReset } from '../hooks/usePasswordReset';
 
 export const NewPassword = () => {
-    const { token } = useParams();
-    const { tokenValido, alert, setAlert } = useTokenValidation(token!);
-    const { password, setPassword, confirmPassword, setConfirmPassword, handleSubmit, passwordModificado } = usePasswordReset(token!, setAlert);
+    const {
+        password,
+        setPassword,
+        confirmPassword,
+        setConfirmPassword,
+        alert,
+        tokenValido,
+        passwordModificado,
+        handleSubmit,
+    } = useNewPassword();
 
     const { mensaje } = alert;
 
     return (
         <>
             <div className="flex flex-col justify-center items-center min-h-screen w-full p-4 animate-blurred-fade-in">
-                <Techone name="TECHONE" />
+            <Title name="TECHONE" />
                 <h1 className="text-3xl md:text-5xl font-bold text-center text-white mb-6 font-josefin">
                     Ingresa tu nueva contraseña e inicia sesión
                 </h1>
