@@ -1,0 +1,23 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #D9D9D9 inset !important;
+    -webkit-text-fill-color: black !important;
+}
+
+input:-moz-autofill,
+input:-moz-autofill:hover,
+input:-moz-autofill:focus,
+input:-moz-autofill:active {
+    box-shadow: 0 0 0 30px #D9D9D9 inset !important;
+    text-fill-color: black !important;
+}
+
+input:-ms-autofill,
+input:-ms-autofill:hover,
+input:-ms-autofill:focus,
+input:-ms-autofill:active {
+    box-shadow: 0 0 0 30px #D9D9D9 inset !important;
+    text-fill-color: black !important;
+}

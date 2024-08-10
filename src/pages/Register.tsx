@@ -5,6 +5,7 @@ import { Subtitle } from "../components/register/Subtitle";
 import { Information } from "../components/register/Information";
 import { Logos } from "../components/register/Logos";
 import { type User } from "../types/TypeLogin";
+import '../Register.css';
 
 const Register = () => {
     const userUnknown: User = {
@@ -70,7 +71,7 @@ const Register = () => {
                                 >
                                     <label htmlFor="name">Nombre:</label>
                                     <input 
-                                        className="rounded-md bg-[#D9D9D9] h-10 text-black/80 p-2"
+                                        className="rounded-md bg-[#D9D9D9] h-10 text-black p-2"
                                         type="text"
                                         id="name"
                                         placeholder="Jhon Doe"
@@ -81,7 +82,7 @@ const Register = () => {
 
                                     <label htmlFor="empresa">Empresa:</label>
                                     <input 
-                                        className="rounded-md bg-[#D9D9D9] h-10 text-black/50 p-2" 
+                                        className="rounded-md bg-[#D9D9D9] h-10 text-black p-2" 
                                         type="text" 
                                         id="empresa" 
                                         placeholder="Tienda de ejemplo..."
@@ -92,7 +93,7 @@ const Register = () => {
 
                                     <label htmlFor="email">Correo Electrónico:</label>
                                     <input 
-                                        className="rounded-md bg-[#D9D9D9] h-10 text-black/50 p-2"
+                                        className="rounded-md bg-[#D9D9D9] h-10 text-black p-2"
                                         type="email" 
                                         id="email" 
                                         placeholder="example@example.com"
@@ -102,7 +103,7 @@ const Register = () => {
 
                                     <label htmlFor="password">Contraseña:</label>
                                     <input 
-                                        className="rounded-md bg-[#D9D9D9] h-10 text-black/50 p-2"
+                                        className="rounded-md bg-[#D9D9D9] h-10 text-black p-2"
                                         type="password" 
                                         id="password" 
                                         placeholder="password.123"
@@ -112,7 +113,7 @@ const Register = () => {
 
                                     <label htmlFor="confirm_pwd">Confirmar Contraseña:</label>
                                     <input 
-                                        className="rounded-md bg-[#D9D9D9] h-10 text-black/50 p-2"
+                                        className="rounded-md bg-[#D9D9D9] h-10 text-black p-2"
                                         type="password" 
                                         id="confirm_pwd" 
                                         placeholder="password.123"
