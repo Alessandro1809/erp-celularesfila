@@ -1,67 +1,27 @@
-import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useNewPassword } from '../hooks/useNewPassword';
+import { Link } from 'react-router-dom';
 import { GradientButton } from '../components/Password/GradientButton';
-import { Logo } from '../components/Password/Logo';
-import clienteAxios from '../config/axios';
+import { Title } from '../components/register/Title';
 import { Alert } from '../components/Password/Alert';
-import { AxiosError } from 'axios';
-
-interface AlertType {
-    mensaje: string;
-    error: boolean;
-}
 
 export const NewPassword = () => {
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [alert, setAlert] = useState<AlertType>({ mensaje: '', error: false });
-    const [tokenValido, setTokenValido] = useState(false);
-    const [passwordModificado, setPasswordModificado] = useState(false);
-
-    const { token } = useParams();
-
-    useEffect(() => {
-        const comprobarToken = async () => {
-            try {
-                await clienteAxios(`/${token}`);
-                setAlert({ mensaje: '', error: false });
-                setTokenValido(true);
-            } catch (error) {
-                setAlert({ mensaje: 'Error en el enlace', error: true });
-            }
-        };
-        comprobarToken();
-    }, [token]);
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-
-        if (password.length < 6) {
-            setAlert({ mensaje: 'La contraseña debe tener más de 6 caracteres', error: true });
-            return;
-        }
-
-        if (password !== confirmPassword) {
-            setAlert({ mensaje: 'Las contraseñas no coinciden', error: true });
-            return;
-        }
-
-        try {
-            const url = `/${token}`;
-            const { data } = await clienteAxios.post(url, { password });
-            setAlert({ mensaje: data.msg, error: false });
-            setPasswordModificado(true);
-        } catch (error:AxiosError) {
-            setAlert({ mensaje: error.response?.data?.msg || 'ha ocurrido un error', error: true });
-        }
-    };
+    const {
+        password,
+        setPassword,
+        confirmPassword,
+        setConfirmPassword,
+        alert,
+        tokenValido,
+        passwordModificado,
+        handleSubmit,
+    } = useNewPassword();
 
     const { mensaje } = alert;
 
     return (
         <>
             <div className="flex flex-col justify-center items-center min-h-screen w-full p-4 animate-blurred-fade-in">
-                <Logo />
+            <Title name="TECHONE" />
                 <h1 className="text-3xl md:text-5xl font-bold text-center text-white mb-6 font-josefin">
                     Ingresa tu nueva contraseña e inicia sesión
                 </h1>
