@@ -6,15 +6,10 @@ import { Information } from "../components/register/Information";
 import { Logos } from "../components/register/Logos";
 import { type User } from '../types/TypeLogin';
 import clienteAxios from "../config/axios";
-import { AxiosResponse } from "axios";
 import '../Register.css';
 
 const Register = () => {
-    interface ApiResponse {
-        success: boolean;
-        message: string;
-        // otros campos que esperas recibir
-      }
+
     const userUnknown: User = {
         id: 0,
         name: '',
@@ -24,11 +19,7 @@ const Register = () => {
         website: '',
         company: ''
     };
-    
-    // const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
-    // const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-  
     const [user, setUser] = useState(userUnknown);
     
     const [matchPwd, setMatchPwd] = useState('');
@@ -56,7 +47,7 @@ const Register = () => {
         }
         
        try {
-        const {data}: AxiosResponse<ApiResponse> = await clienteAxios.post('/admin', user);
+        await clienteAxios.post('/admin', user);
         setErrMsg('Usuario creado exitosamente, revisa tu email para activar tu cuenta, e inicia sesión');
        } catch (error) {
         console.log(error);
