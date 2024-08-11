@@ -19,12 +19,10 @@ function App() {
 
               <Route path='Register' element={<Register/>}/>
               <Route path='login' element={<InicioSesion/>}/>
-
               <Route path='/login' element={<InicioSesion/>}/>
-
-              <Route path="/ForgotPassword" element={<ForgotPassword/>}/>
-              <Route path="/NewPassword" element={<NewPassword/>}/>
-              <Route path="/Authentification" element={<Authentification/>}/>
+              <Route path="/forgot-password" element={<ForgotPassword/>}/>
+              <Route path="/new-password" element={<NewPassword/>}/>
+              <Route path="/authentification/:token" element={<Authentification/>}/>
             </Route>
 
             

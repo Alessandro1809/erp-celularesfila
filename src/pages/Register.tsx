@@ -4,48 +4,65 @@ import { Title } from "../components/register/Title";
 import { Subtitle } from "../components/register/Subtitle";
 import { Information } from "../components/register/Information";
 import { Logos } from "../components/register/Logos";
-import { type User } from "../types/TypeLogin";
+import { type User } from '../types/TypeLogin';
+import clienteAxios from "../config/axios";
+import { AxiosResponse } from "axios";
 import '../Register.css';
 
 const Register = () => {
+    interface ApiResponse {
+        success: boolean;
+        message: string;
+        // otros campos que esperas recibir
+      }
     const userUnknown: User = {
         id: 0,
         name: '',
+        password: '',
         email: '',
-        address: '',
         phone: '',
         website: '',
         company: ''
     };
     
-    const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
-    const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    // const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
+    // const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
   
     const [user, setUser] = useState(userUnknown);
-    const [pwd, setPwd] = useState('');
+    
     const [matchPwd, setMatchPwd] = useState('');
     const [errMsg, setErrMsg] = useState('');
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement> | React.FormEvent<HTMLButtonElement> ) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement> | React.FormEvent<HTMLButtonElement> ) => {
         e.preventDefault();
-        
-        const isValidUser = USER_REGEX.test(user.name);
-        const isValidEmail = EMAIL_REGEX.test(user.email);
-        const isPwdMatch = pwd === matchPwd;
+        const { name, email,company, password } = user;
+    
+        const isPwdMatch = password === matchPwd;
 
-        if (!isValidUser || !isValidEmail) {
-            setErrMsg("Parece que algunos de tus datos son inválidos");
+        if (  name === '' || email === '' || company === ''){
+            console.log(user);
+             
+            setErrMsg("Parece que algunos de tus datos están incompletos");
             return;
         }
         if (!isPwdMatch) {
             setErrMsg("Las contraseñas no coinciden");
             return;
         }
-
-        setErrMsg('');
-       
-        console.log("Usuario registrado con éxito:", user);
+        if (password.length<6) {
+            setErrMsg("La contraseña debe tener más de 6 caracteres");
+            return;
+        }
+        
+       try {
+        const {data}: AxiosResponse<ApiResponse> = await clienteAxios.post('/admin', user);
+        setErrMsg('Usuario creado exitosamente, revisa tu email para activar tu cuenta, e inicia sesión');
+       } catch (error) {
+        console.log(error);
+        
+       }
+        
     };
 
     return (
@@ -107,7 +124,7 @@ const Register = () => {
                                         type="password" 
                                         id="password" 
                                         placeholder="password.123"
-                                        onChange={(e) => setPwd(e.target.value)} 
+                                        onChange={(e) => setUser({ ...user, password: e.target.value })} 
                                         required 
                                     />
 
@@ -120,7 +137,7 @@ const Register = () => {
                                         onChange={(e) => setMatchPwd(e.target.value)} 
                                         required
                                     />
-                                    {errMsg && <p className="text-red-500">{errMsg}</p>}
+                                    {errMsg && <p className="text-cyan-300 text-2xl font-medium bg-black/70 rounded-lg p-2">{errMsg}</p>}
                                     <ButtonRegister name="Registrarme" action={handleSubmit}/>
                                 </form>
                                 <section className="mt-4">

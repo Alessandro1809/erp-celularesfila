@@ -1,7 +1,6 @@
 import { Title } from "../components/register/Title";
 import { Subtitle } from "../components/register/Subtitle";
 import { Information } from "../components/register/Information";
-import { ButtonLogin } from "../components/login/ButtonLogin";
 import { Link } from "react-router-dom";
 
 const Authentification = () => {
