@@ -72,14 +72,14 @@ const Register = () => {
                     <section className="w-full md:w-full lg:w-full xl:w-full p-4">
                         <section className="flex flex-col">
                             <div className="flex flex-col justify-center w-full mt-5 bg-[#82F7FF]/[17%] rounded-md border border-[#38FF88] p-4">
-                                <p className="text-3xl font-bold text-white rounded-md mb-4">Registro</p>
+                                <p className="text-3xl font-bold text-[#DBFF5E] rounded-md mb-4">Registro</p>
                                 <form 
-                                    className="flex flex-col justify-center w-full mt-0 space-y-3 rounded-md text-white p-4"
+                                    className="flex flex-col justify-center w-full mt-0 space-y-3 rounded-md text-[#DBFF5E] p-4"
                                     onSubmit={handleSubmit}
                                 >
                                     <label htmlFor="name">Nombre:</label>
                                     <input 
-                                        className="rounded-md bg-[#D9D9D9] h-10 text-white p-2"
+                                        className="rounded-md bg-[#D9D9D9] h-10 text-[#DBFF5E] p-2"
                                         type="text"
                                         id="name"
                                         placeholder="Jhon Doe"
@@ -90,7 +90,7 @@ const Register = () => {
 
                                     <label htmlFor="empresa">Empresa:</label>
                                     <input 
-                                        className="rounded-md bg-[#D9D9D9] h-10 text-white p-2" 
+                                        className="rounded-md bg-[#D9D9D9] h-10 text-[#000] p-2" 
                                         type="text" 
                                         id="empresa" 
                                         placeholder="Tienda de ejemplo..."
@@ -101,7 +101,7 @@ const Register = () => {
 
                                     <label htmlFor="email">Correo Electrónico:</label>
                                     <input 
-                                        className="rounded-md bg-[#D9D9D9] h-10 text-white p-2"
+                                        className="rounded-md bg-[#D9D9D9] h-10 text-[#000] p-2"
                                         type="email" 
                                         id="email" 
                                         placeholder="example@example.com"
@@ -111,7 +111,7 @@ const Register = () => {
 
                                     <label htmlFor="password">Contraseña:</label>
                                     <input 
-                                        className="rounded-md bg-[#D9D9D9] h-10 text-white p-2"
+                                        className="rounded-md bg-[#D9D9D9] h-10 text-[#000] p-2"
                                         type="password" 
                                         id="password" 
                                         placeholder="password.123"
@@ -121,18 +121,18 @@ const Register = () => {
 
                                     <label htmlFor="confirm_pwd">Confirmar Contraseña:</label>
                                     <input 
-                                        className="rounded-md bg-[#D9D9D9] h-10 text-white p-2"
+                                        className="rounded-md bg-[#D9D9D9] h-10 text-[#000] p-2"
                                         type="password" 
                                         id="confirm_pwd" 
                                         placeholder="password.123"
                                         onChange={(e) => setMatchPwd(e.target.value)} 
                                         required
                                     />
-                                    {errMsg && <p className="text-cyan-300 text-2xl font-medium bg-white/70 rounded-lg p-2">{errMsg}</p>}
+                                    {errMsg && <p className="text-cyan-300 text-2xl font-medium bg-black/70 rounded-lg p-2">{errMsg}</p>}
                                     <ButtonRegister name="Registrarme" action={handleSubmit}/>
                                 </form>
                                 <section className="mt-4">
-                                    <p className="text-white">¿Ya tienes una cuenta? <a href="/login" className="text-[#2BFF7F]">Inicia Sesión</a></p>
+                                    <p className="text-[#DBFF5E]">¿Ya tienes una cuenta? <a href="/login" className="text-[#faffe7]">Inicia Sesión</a></p>
                                 </section>
                             </div>
                         </section>

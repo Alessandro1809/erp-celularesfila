@@ -23,8 +23,8 @@ export const InicioSesion = () => {
               <div className="bg-[#82F7FF]/[17%] rounded m-4 w-5/6 md:w-2/3 justify-center border border-[#38FF88]" >  
                 <FormLogin/>
                 <section className="flex flex-row space-x-8 m-2 justify-center">
-                <p className="text-white">¿No tienes una cuenta aún? <a href="Register" className="text-[#2BFF7F]">Registrate </a></p>
-                <a href="./ForgotPassword" className="text-white "> Olvide mi contraseña</a>
+                <p className="text-[#DBFF5E]">¿No tienes una cuenta aún? <a href="/" className="text-white">Registrate </a></p>
+                <a href="/forgot-password" className="text-[#DBFF5E] "> Olvide mi contraseña</a>
 
                 </section>
 

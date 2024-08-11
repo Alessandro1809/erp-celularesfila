@@ -23,7 +23,7 @@ export const useForgotPassword = () => {
         }
 
         try {
-            const { data } = await clienteAxios.post('/', { email });
+            const { data } = await clienteAxios.post('/olvide-password', { email });
             setAlert({ mensaje: data.msg, error: false });
             setTimeout(() => {
                 setAlert({ mensaje: '' });

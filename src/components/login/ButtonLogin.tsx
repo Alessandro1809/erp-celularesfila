@@ -8,7 +8,7 @@ export const ButtonLogin : React.FC<Props> = ({ name, onClick }) => {
   return (
     <>
       <button onClick={onClick} 
-      className=" bg-gradient-to-r from-gray-100 to-green-500 text-black font-bold py-2 px-4 rounded-md shadow-lg my-3 text-sm md:text-base lg:text-lg transition-all duration-1000 anim">{name}</button>
+      className=" bg-gradient-to-r from-gray-100 to-[#DBFF5E] text-black font-bold py-2 px-4 rounded-md shadow-lg my-3 text-sm md:text-base lg:text-lg transition-all duration-1000 anim">{name}</button>
     </>
   )
 }
