@@ -21,7 +21,7 @@ export const InicioSesion = () => {
             <h1 className="text-white text-xl font-sans m-4 font-bold">Inicia Sesión</h1>
               <div className="bg-[#82F7FF]/[17%] rounded m-4 w-5/6 md:w-2/3 justify-center border border-[#38FF88]" >  
                 <FormLogin/>
-                <section className="flex flex-row space-x-8 m-2 justify-center">
+                <section className="flex flex-row space-x-8 m-1 justify-center">
                 <p className="text-white">¿No tienes una cuenta aún? <a href="Register" className="text-[#2BFF7F]">Registrate </a></p>
                 <a href="./ForgotPassword" className="text-white "> Olvide mi contraseña</a>
 
