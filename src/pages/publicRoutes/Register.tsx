@@ -1,11 +1,11 @@
 import {  useState } from "react";
-import { ButtonRegister } from "../components/register/ButtonRegister";
-import { Title } from "../components/register/Title";
-import { Subtitle } from "../components/register/Subtitle";
-import { Information } from "../components/register/Information";
-import { Logos } from "../components/register/Logos";
-import { type User } from '../types/TypeLogin';
-import clienteAxios from "../config/axios";
+import { ButtonRegister } from "../../components/publicComponents/register/ButtonRegister";
+import { Title } from "../../components/publicComponents/register/Title";
+import { Subtitle } from "../../components/publicComponents/register/Subtitle";
+import { Information } from "../../components/publicComponents/register/Information";
+import { Logos } from "../../components/publicComponents/register/Logos";
+import { type User } from '../../types/Authtypes';
+import clienteAxios from "../../config/axios";
 import '../Register.css';
 
 const Register = () => {

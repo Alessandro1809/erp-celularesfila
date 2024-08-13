@@ -1,15 +1,8 @@
+// AuthProvider.tsx
 import React, { useState, useEffect, createContext, ReactNode } from "react";
 import clienteAxios from "../config/axios";
 import { AxiosError, AxiosResponse } from "axios";
-
-interface AuthContextType {
-  Auth: object; // Cambia `any` por la estructura esperada de los datos de autenticación
-  setAuth: React.Dispatch<React.SetStateAction<JSON>>;
-  cargando: boolean;
-  cerrarSesion: () => void;
-  actualizarPerfil: (datos: JSON) => Promise<{ mensaje: string; error: boolean }>;
-  guardarPassword: (datos: JSON) => Promise<{ mensaje: string; error?: boolean }>;
-}
+import { AuthContextType, UserProfile } from '../types/Authtypes';
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
@@ -19,7 +12,7 @@ interface AuthProviderProps {
 
 const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [cargando, setCargando] = useState(true);
-  const [Auth, setAuth] = useState<object>({}); // Cambia `any` por la estructura esperada
+  const [Auth, setAuth] = useState<UserProfile | null>(null);
 
   useEffect(() => {
     const autenticarUsuario = async () => {
@@ -37,13 +30,13 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       };
 
       try {
-        const { data }: AxiosResponse<JSON> = await clienteAxios.get('/veterinarios/perfil', config);
+        const { data }: AxiosResponse<UserProfile> = await clienteAxios.get('/veterinarios/perfil', config);
         setAuth(data);
       } catch (error) {
         if (error instanceof AxiosError) {
           console.log(error.response?.data?.msg);
         }
-        setAuth({});
+        setAuth(null);
       }
 
       setCargando(false);
@@ -53,15 +46,14 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const cerrarSesion = () => {
     localStorage.removeItem('token');
-    setAuth({});
+    setAuth(null);
   };
 
-  const actualizarPerfil = async (datos: JSON) => { // Cambia `any` por la estructura esperada
+  const actualizarPerfil = async (datos: Partial<UserProfile>) => {
     const token = localStorage.getItem('token');
-    const { _id } = Auth as { _id: string };
-    if (!token) {
+    if (!token || !Auth?._id) {
       setCargando(false);
-      return { mensaje: 'Token no encontrado', error: true };
+      return { mensaje: 'Token no encontrado o perfil no disponible', error: true };
     }
 
     const config = {
@@ -72,19 +64,19 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     };
 
     try {
-      const url = `/veterinarios/perfil/${_id}`;
-      const { data }: AxiosResponse<JSON> = await clienteAxios.put(url, datos, config);
+      const url = `/veterinarios/perfil/${Auth._id}`;
+      const { data }: AxiosResponse<{ msg: string }> = await clienteAxios.put(url, datos, config);
       
-      return { mensaje: 'Almacenado correctamente', error: false };
+      return { mensaje: data.msg, error: false };
     } catch (error) {
       if (error instanceof AxiosError) {
-        return { mensaje: error.response?.data?.msg, error: true };
+        return { mensaje: error.response?.data?.msg || 'Error desconocido', error: true };
       }
       return { mensaje: 'Error desconocido', error: true };
     }
   };
 
-  const guardarPassword = async (datos: JSON) => { // Cambia `any` por la estructura esperada
+  const guardarPassword = async (datos: { oldPassword: string; newPassword: string }) => {
     const token = localStorage.getItem('token');
     if (!token) {
       setCargando(false);
@@ -100,11 +92,11 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
     try {
       const url = '/veterinarios/actualizarPassword';
-      const { data }: AxiosResponse<AxiosResponse> = await clienteAxios.put(url, datos, config);
-      return { mensaje: data.data.msg };
+      const { data }: AxiosResponse<{ msg: string }> = await clienteAxios.put(url, datos, config);
+      return { mensaje: data.msg };
     } catch (error) {
       if (error instanceof AxiosError) {
-        return { mensaje: error.response?.data?.msg, error: true };
+        return { mensaje: error.response?.data?.msg || 'Error desconocido', error: true };
       }
       return { mensaje: 'Error desconocido', error: true };
     }
