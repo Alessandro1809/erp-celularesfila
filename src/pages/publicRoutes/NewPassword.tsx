@@ -1,4 +1,4 @@
-import { useNewPassword } from '../../hooks/useNewPassword';
+import { useNewPassword } from '../../hooks/Auth/useNewPassword';
 import { Link } from 'react-router-dom';
 import { GradientButton } from '../../components/publicComponents/Password/GradientButton';
 import { Title } from '../../components/publicComponents/register/Title';
