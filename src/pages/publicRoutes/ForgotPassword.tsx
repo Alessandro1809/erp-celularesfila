@@ -12,14 +12,14 @@ export const ForgotPassword = () => {
         <>
             <div className="flex flex-col justify-center items-center min-h-screen w-full p-4 animate-blurred-fade-in">
                 <Title name="TECHONE" />
-                <h1 className="text-3xl md:text-5xl font-bold text-center text-white mb-6 font-josefin">
+                <h1 className="text-3xl md:text-5xl font-bold text-center text-[#DBFF5E] mb-6 font-josefin">
                     ¡Vamos a reestablecer tu contraseña!
                 </h1>
                 <section className="bg-custom-blue bg-opacity-20 border border-custom-green p-8 rounded-lg w-full max-w-md">
                     {mensaje && <Alert alert={alert} />}
                     <form onSubmit={handleSubmit}>
                         <div className="mb-4">
-                            <label htmlFor="email" className="block text-lg text-white font-medium mb-2 font-josefin">
+                            <label htmlFor="email" className="block text-lg text-[#DBFF5E] font-medium mb-2 font-josefin">
                                 Email:
                             </label>
                             <input
@@ -35,11 +35,11 @@ export const ForgotPassword = () => {
                             <GradientButton text="Enviar Email" />
                         </div>
                     </form>
-                    <p className="text-left text-white mt-4 font-josefin">
-                        ¿Ya tienes una cuenta? <a href="/" className="text-custom-green-text hover:underline font-josefin">Inicia sesión</a>
+                    <p className="text-left text-[#DBFF5E] mt-4 font-josefin">
+                        ¿Ya tienes una cuenta? <a href="/" className="text-white hover:underline font-josefin">Inicia sesión</a>
                     </p>
                 </section>
-                <h1 className="text-xl md:text-2xl font-bold text-center text-white mt-6 font-josefin">
+                <h1 className="text-xl md:text-2xl font-bold text-center text-[#DBFF5E] mt-6 font-josefin">
                     Revisa tu bandeja de entrada y reestablece tu contraseña
                 </h1>
             </div>
