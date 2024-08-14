@@ -6,10 +6,6 @@ import { Information } from "../../components/publicComponents/register/Informat
 import { Logos } from "../../components/publicComponents/register/Logos";
 import { type User } from '../../types/Authtypes';
 import clienteAxios from "../../config/axios";
-<<<<<<< HEAD
-
-=======
->>>>>>> c1638a943f0750f6e19f3a65d495f626df9f5ddb
 
 const Register = () => {
 
