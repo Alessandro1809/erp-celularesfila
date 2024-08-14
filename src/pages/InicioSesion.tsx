@@ -1,9 +1,10 @@
 
 import FormLogin from "../components/login/FormLogin"
-import { InfoScreen } from "../components/register/InfoScreen"
-import { InfoScreen3 } from "../components/register/InfoScreen3"
+import { Title } from "../components/register/Title";
+import { Subtitle } from "../components/register/Subtitle";
+import { Information } from "../components/register/Information";
 import { Logos } from "../components/register/Logos"
-import { Techone } from "../components/register/Techone"
+
 
 export const InicioSesion = () => {
   //aqui se pasan las props
@@ -12,18 +13,24 @@ export const InicioSesion = () => {
    <section className="flex flex-col justify-center items-center h-screen w-full md:container md:mx-auto animate-blurred-fade-in">
       <article className="flex flex-col space-y-2 md:flex-row w-full ">
         <div className="w-auto md:w-1/2 space-y-2">
-          <Techone name="TECHONE" />
-          <InfoScreen name="Gestión inteligente, resultados sorprendentes" /> 
-          <InfoScreen3 name="Inicia sesión llenando nuestro formulario o bien iniciando sesión con tus redes." />
+          <Title name="TECHONE" />
+          <Subtitle name="Gestión inteligente, resultados sorprendentes" /> 
+          <Information name="Inicia sesión llenando nuestro formulario o bien iniciando sesión con tus redes." />
           <Logos />
         </div>
           <div className="w-full md:w-1/2 space-y-2 justify-center md:mx-auto">
             <h1 className="text-white text-xl font-sans m-4 font-bold">Inicia Sesión</h1>
               <div className="bg-[#82F7FF]/[17%] rounded m-4 w-5/6 md:w-2/3 justify-center border border-[#38FF88]" >  
                 <FormLogin/>
+<<<<<<< HEAD
                 <section className="flex flex-row space-x-8 m-1 justify-center">
                 <p className="text-white">¿No tienes una cuenta aún? <a href="Register" className="text-[#2BFF7F]">Registrate </a></p>
                 <a href="./ForgotPassword" className="text-white "> Olvide mi contraseña</a>
+=======
+                <section className="flex flex-row space-x-8 m-2 justify-center">
+                <p className="text-[#DBFF5E]">¿No tienes una cuenta aún? <a href="/" className="text-white">Registrate </a></p>
+                <a href="/forgot-password" className="text-[#DBFF5E] "> Olvide mi contraseña</a>
+>>>>>>> 177c2c6005151dc146575738242f59e8bfc171a9
 
                 </section>
 
