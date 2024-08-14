@@ -20,7 +20,7 @@ export const useNewPassword = () => {
     useEffect(() => {
         const comprobarToken = async () => {
             try {
-                await clienteAxios(`/${token}`);
+                await clienteAxios(`/admin/olvide-password/${token}`);
                 setAlert({ mensaje: '', error: false });
                 setTokenValido(true);
             } catch (error: unknown) {
@@ -48,7 +48,7 @@ export const useNewPassword = () => {
         }
 
         try {
-            const url = `/${token}`;
+            const url = `/admin/olvide-password/${token}`;
             const { data } = await clienteAxios.post(url, { password });
             setAlert({ mensaje: data.msg, error: false });
             setPasswordModificado(true);
@@ -72,5 +72,3 @@ export const useNewPassword = () => {
         handleSubmit,
     };
 };
-
-

@@ -21,7 +21,7 @@ function App() {
               <Route path='login' element={<InicioSesion/>}/>
               <Route path='/login' element={<InicioSesion/>}/>
               <Route path="/forgot-password" element={<ForgotPassword/>}/>
-              <Route path="/new-password" element={<NewPassword/>}/>
+              <Route path="/new-password/:token" element={<NewPassword/>}/>
               <Route path="/authentification/:token" element={<Authentification/>}/>
             </Route>
 
