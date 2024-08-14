@@ -1,9 +1,9 @@
 
-import FormLogin from "../components/login/FormLogin"
-import { Title } from "../components/register/Title";
-import { Subtitle } from "../components/register/Subtitle";
-import { Information } from "../components/register/Information";
-import { Logos } from "../components/register/Logos"
+import FormLogin from "../../components/publicComponents/login/FormLogin"
+import { Title } from "../../components/publicComponents/register/Title";
+import { Subtitle } from "../../components/publicComponents/register/Subtitle";
+import { Information } from "../../components/publicComponents/register/Information";
+import { Logos } from "../../components/publicComponents/register/Logos"
 
 
 export const InicioSesion = () => {

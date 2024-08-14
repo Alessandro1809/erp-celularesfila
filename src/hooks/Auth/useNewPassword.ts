@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import clienteAxios from '../config/axios';
+import clienteAxios from '../../config/axios';
 import { AxiosError } from 'axios';
 
 interface AlertType {

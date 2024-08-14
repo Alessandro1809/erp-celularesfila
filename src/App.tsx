@@ -1,17 +1,20 @@
 import { Route,Routes, BrowserRouter } from "react-router-dom";
-import { ForgotPassword } from "./pages/ForgotPassword";
-import { NewPassword } from "./pages/NewPassword";
+import { ForgotPassword } from "./pages/publicRoutes/ForgotPassword";
+import { NewPassword } from "./pages/publicRoutes/NewPassword";
 import AuthLayout from "./Layout/AuthLayout";
-import Register from "./pages/Register";
-import  Authentification  from "./pages/Authentification";
-import { InicioSesion } from "./pages/InicioSesion";
+import Register from "./pages/publicRoutes/Register";
+import  Authentification  from "./pages/publicRoutes/Authentification";
+import { InicioSesion } from "./pages/publicRoutes/InicioSesion";
+import { AuthProvider } from "./context/AuthProvider";
+import ProtectedLayout from './Layout/ProtectedLayout';
+import { AdminHome } from "./pages/privateRoutes/AdminHome";
 function App() {
   
 
   return (
     <>
     <BrowserRouter>
-      
+      <AuthProvider>
           <Routes>
           {/* rutas publicas */}
             <Route path='/' element={<AuthLayout/>}>
@@ -26,14 +29,15 @@ function App() {
             </Route>
 
             
-            {/* <Route path='admin' element={<RutaProtegida/>}>
-              <Route index element={<AdministrarPacientes/>} />
+           <Route path='admin' element={<ProtectedLayout/>}>
+           <Route index element={<AdminHome/>} />
+            {/*    
               <Route path='perfil' element={<EditarPerfil/>}/>
-              <Route path='cambiar-password' element={<CambiarPasswoord/>}/>
-            </Route>      */}
+              <Route path='cambiar-password' element={<CambiarPasswoord/>}/> */}
+            </Route>     
 
           </Routes>
-        
+        </AuthProvider>
     </BrowserRouter>
     </>
   )
