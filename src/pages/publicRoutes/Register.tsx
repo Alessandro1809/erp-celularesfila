@@ -78,7 +78,7 @@ const Register = () => {
                                 >
                                     <label htmlFor="name">Nombre:</label>
                                     <input 
-                                        className="rounded-md bg-[#D9D9D9] h-10 text-[#DBFF5E] p-2"
+                                        className="rounded-md bg-[#D9D9D9] h-10 text-black p-2"
                                         type="text"
                                         id="name"
                                         placeholder="Jhon Doe"
