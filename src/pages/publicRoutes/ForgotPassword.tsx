@@ -1,7 +1,7 @@
 import { GradientButton } from '../../components/publicComponents/Password/GradientButton';
 import { Title } from '../../components/publicComponents/register/Title';
 import { Alert } from '../../components/publicComponents/Password/Alert';
-import { useForgotPassword } from '../../hooks/useForgotPassword';
+import { useForgotPassword } from '../../hooks/Auth/useForgotPassword';
 
 export const ForgotPassword = () => {
     const { email, setEmail, alert, handleSubmit } = useForgotPassword();

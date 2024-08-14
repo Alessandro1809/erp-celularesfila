@@ -6,7 +6,6 @@ import { Information } from "../../components/publicComponents/register/Informat
 import { Logos } from "../../components/publicComponents/register/Logos";
 import { type User } from '../../types/Authtypes';
 import clienteAxios from "../../config/axios";
-import '../Register.css';
 
 const Register = () => {
 
@@ -59,7 +58,7 @@ const Register = () => {
     return (
         <>
             <div className="flex flex-col md:flex-row py-20 animate-blurred-fade-in">
-                <div className="flex flex-col justify-center w-full space-y-6 mx-auto md:ml-32 animate-blurred-fade-in">
+                <div className="flex flex-col justify-center w-full space-y-6 mx-auto md:mx-16 animate-blurred-fade-in">
                     <Title name="TECHONE" />
                     <span className="text-center md:text-left">
                         <Subtitle name="Regístrate y empieza a gestionar de la mejor manera tu negocio" />
@@ -70,7 +69,7 @@ const Register = () => {
 
                 <div className="flex justify-center items-center h-auto w-full animate-blurred-fade-in">
                     <section className="w-full md:w-full lg:w-full xl:w-full p-4">
-                        <section className="flex flex-col">
+                        <section className="flex flex-col mx-4">
                             <div className="flex flex-col justify-center w-full mt-5 bg-[#82F7FF]/[17%] rounded-md border border-[#38FF88] p-4">
                                 <p className="text-3xl font-bold text-[#DBFF5E] rounded-md mb-4">Registro</p>
                                 <form 
