@@ -1,8 +1,8 @@
-import { useNewPassword } from '../hooks/useNewPassword';
+import { useNewPassword } from '../../hooks/useNewPassword';
 import { Link } from 'react-router-dom';
-import { GradientButton } from '../components/Password/GradientButton';
-import { Title } from '../components/register/Title';
-import { Alert } from '../components/Password/Alert';
+import { GradientButton } from '../../components/publicComponents/Password/GradientButton';
+import { Title } from '../../components/publicComponents/register/Title';
+import { Alert } from '../../components/publicComponents/Password/Alert';
 
 export const NewPassword = () => {
     const {

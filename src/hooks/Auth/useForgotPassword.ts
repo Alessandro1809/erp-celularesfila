@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import clienteAxios from '../config/axios';
+import clienteAxios from '../../config/axios';
 
 interface AlertType {
     mensaje: string;
