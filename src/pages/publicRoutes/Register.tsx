@@ -6,7 +6,7 @@ import { Information } from "../../components/publicComponents/register/Informat
 import { Logos } from "../../components/publicComponents/register/Logos";
 import { type User } from '../../types/Authtypes';
 import clienteAxios from "../../config/axios";
-import '../Register.css';
+
 
 const Register = () => {
 
