@@ -5,6 +5,7 @@ import { useForgotPassword } from '../../hooks/Auth/useForgotPassword';
 
 export const ForgotPassword = () => {
     const { email, setEmail, alert, handleSubmit } = useForgotPassword();
+
     const { mensaje } = alert;
 
     return (
@@ -35,7 +36,7 @@ export const ForgotPassword = () => {
                         </div>
                     </form>
                     <p className="text-left text-[#DBFF5E] mt-4 font-josefin">
-                        ¿Ya tienes una cuenta? <a href="login" className="text-white hover:underline font-josefin">Inicia sesión</a>
+                        ¿Ya tienes una cuenta? <a href="/" className="text-white hover:underline font-josefin">Inicia sesión</a>
                     </p>
                 </section>
                 <h1 className="text-xl md:text-2xl font-bold text-center text-[#DBFF5E] mt-6 font-josefin">
