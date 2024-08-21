@@ -21,7 +21,6 @@ function App() {
               <Route index element={<Register/>}/>
 
               <Route path='Register' element={<Register/>}/>
-              <Route path='login' element={<InicioSesion/>}/>
               <Route path='/login' element={<InicioSesion/>}/>
               <Route path="/forgot-password" element={<ForgotPassword/>}/>
               <Route path="/new-password/:token" element={<NewPassword/>}/>
