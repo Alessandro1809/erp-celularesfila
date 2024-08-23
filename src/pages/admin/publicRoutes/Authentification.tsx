@@ -1,6 +1,6 @@
-import { Title } from "../../components/publicComponents/register/Title";
-import { Subtitle } from "../../components/publicComponents/register/Subtitle";
-import { Information } from "../../components/publicComponents/register/Information";
+import { Title } from "../../../components/publicComponents/register/Title";
+import { Subtitle } from "../../../components/publicComponents/register/Subtitle";
+import { Information } from "../../../components/publicComponents/register/Information";
 import { Link } from "react-router-dom";
 
 const Authentification = () => {

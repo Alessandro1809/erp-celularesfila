@@ -1,13 +1,13 @@
 import { Route,Routes, BrowserRouter } from "react-router-dom";
-import { ForgotPassword } from "./pages/publicRoutes/ForgotPassword";
-import { NewPassword } from "./pages/publicRoutes/NewPassword";
-import AuthLayout from "./Layout/AuthLayout";
-import Register from "./pages/publicRoutes/Register";
-import  Authentification  from "./pages/publicRoutes/Authentification";
-import { InicioSesion } from "./pages/publicRoutes/InicioSesion";
+import { ForgotPassword } from "./pages/admin/publicRoutes/ForgotPassword";
+import { NewPassword } from "./pages/admin/publicRoutes/NewPassword";
+import AuthLayout from "./Layout/admin/AuthLayout";
+import Register from "./pages/admin/publicRoutes/Register";
+import  Authentification  from "./pages/admin/publicRoutes/Authentification";
+import { InicioSesion } from "./pages/admin/publicRoutes/InicioSesion";
 import { AuthProvider } from "./context/AuthProvider";
-import ProtectedLayout from './Layout/ProtectedLayout';
-import { AdminHome } from "./pages/privateRoutes/AdminHome";
+import ProtectedLayout from './Layout/admin/ProtectedLayout';
+import { AdminHome } from "./pages/admin/privateRoutes/AdminHome";
 function App() {
   
 
