@@ -8,34 +8,32 @@ const FormLogin: React.FC = () => {
    
     return (
         <>
-            {alerta.mensaje && <Alerta alerta={alerta} />}
-            <form onSubmit={handleSubmit} className="w-full flex flex-col items-center">
-                <div className='flex flex-col w-full md:w-4/5'>
-                    <label htmlFor="email" className="text-[#DBFF5E] text-left text-lg m-1 font-sans font-bold">Correo electrónico:</label>
-                    <input 
-                        type="email" 
-                        id="email" 
-                        value={email} 
-                        onChange={(e) => setEmail(e.target.value)} 
-                        placeholder="Ingrese su correo electrónico" 
-                        className='rounded w-full p-2'  
-                    />
-                </div>
-                <div className='flex flex-col w-full md:w-4/5'>
-                    <label htmlFor="password" className="text-[#DBFF5E] text-left text-lg m-1 font-sans font-bold">Contraseña:</label>
-                    <input 
-                        type="password" 
-                        id="password" 
-                        value={password} 
-                        onChange={(e) => setPassword(e.target.value)} 
-                        placeholder="Ingrese su contraseña" 
-                        className='rounded w-full p-2' 
-                    />
-                </div>
-                <div className='flex justify-center w-full mt-4'>
-                    <ButtonLogin name="Iniciar Sesión" />
-                </div>
-            </form>
+
+        {alerta.mensaje && <Alerta alerta={alerta} />}
+        <p className="text-[#DBFF5E] text-3xl font-sans m-2 font-bold rounded-md">Inicia Sesión</p>
+        <form className="flex flex-col justify-center w-full mt-0 space-y-3 rounded-md text-[#DBFF5E] p-4"
+        onSubmit={handleSubmit} >
+
+                <label htmlFor="email">Correo electrónico:</label>
+                <input 
+                type="email" 
+                id="email" 
+                value={email} 
+                onChange={(e)=>setEmail(e.target.value)} 
+                placeholder="Ingrese su correo electrónico" 
+                className='rounded-md bg-[#D9D9D9] h-10 text-black p-2' />
+
+                <label htmlFor="password">Contraseña:</label>
+                <input 
+                type="password" 
+                id="password" 
+                value={password} 
+                onChange={(e)=>setPassword(e.target.value)} 
+                placeholder="Ingrese su contraseña" 
+                className='rounded-md bg-[#D9D9D9] h-10 text-black p-2' />
+                
+        <ButtonLogin name="Iniciar Sesión"/> 
+        </form>
         </>
     );
 };

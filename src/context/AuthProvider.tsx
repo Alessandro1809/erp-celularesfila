@@ -30,7 +30,7 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       };
 
       try {
-        const { data }: AxiosResponse<UserProfile> = await clienteAxios.get('/veterinarios/perfil', config);
+        const { data }: AxiosResponse<UserProfile> = await clienteAxios.get('/admin/perfil', config);
         setAuth(data);
       } catch (error) {
         if (error instanceof AxiosError) {
@@ -64,7 +64,7 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     };
 
     try {
-      const url = `/veterinarios/perfil/${Auth._id}`;
+      const url = `/admin/perfil/${Auth._id}`;
       const { data }: AxiosResponse<{ msg: string }> = await clienteAxios.put(url, datos, config);
       
       return { mensaje: data.msg, error: false };
@@ -90,8 +90,9 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       }
     };
 
+  // Pendiente corregir ruta de la API
     try {
-      const url = '/veterinarios/actualizarPassword';
+      const url = '/admin/olvide-password';
       const { data }: AxiosResponse<{ msg: string }> = await clienteAxios.put(url, datos, config);
       return { mensaje: data.msg };
     } catch (error) {
@@ -102,6 +103,10 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   };
 
+
+  // Para Customer: cerrarSesion, actualizarPerfil(De momento no) y guardarPassword(url: /olvide-password/:token "post")
+
+  
   return (
     <AuthContext.Provider
       value={{

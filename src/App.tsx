@@ -8,6 +8,13 @@ import { InicioSesion } from "./pages/admin/publicRoutes/InicioSesion";
 import { AuthProvider } from "./context/AuthProvider";
 import ProtectedLayout from './Layout/admin/ProtectedLayout';
 import { AdminHome } from "./pages/admin/privateRoutes/AdminHome";
+
+
+//Customer
+import LoginCustomer from "./pages/customer/publicRoutes/LoginCustomer";
+import NewPasswordCustomer from "./pages/customer/publicRoutes/NewPasswordCustomer";
+import ForgotPasswordCustomer from "./pages/customer/publicRoutes/ForgotPasswordCustomer";
+import AuthCustomerLayout from "./Layout/customer/AuthCustomerLayout";
 function App() {
   
 
@@ -25,6 +32,17 @@ function App() {
               <Route path="/forgot-password" element={<ForgotPassword/>}/>
               <Route path="/new-password/:token" element={<NewPassword/>}/>
               <Route path="/authentification/:token" element={<Authentification/>}/>
+
+            </Route>
+
+              {/* rutas customer */}
+            <Route path="/customer" element={<AuthCustomerLayout/>}>
+
+              <Route index element={<LoginCustomer/>}/>
+              <Route path="/customer/new-password" element={<NewPasswordCustomer/>}/>
+              <Route path="/customer/forgot-password" element={<ForgotPasswordCustomer/>}/>
+
+             
             </Route>
 
             
