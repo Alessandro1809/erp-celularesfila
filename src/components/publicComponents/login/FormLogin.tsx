@@ -1,14 +1,14 @@
-import {ButtonLogin} from './ButtonLogin';
+import { ButtonLogin } from './ButtonLogin';
 import Alerta from './Alerta';
 import useLogin from '../../../hooks/useLogin';
 
-
 const FormLogin: React.FC = () => {
 
-    const {email, setEmail, password, setPassword, alerta, handleSubmit} = useLogin();
+    const { email, setEmail, password, setPassword, alerta, handleSubmit } = useLogin();
    
     return (
         <>
+
         {alerta.mensaje && <Alerta alerta={alerta} />}
         <p className="text-[#DBFF5E] text-3xl font-sans m-2 font-bold rounded-md">Inicia Sesión</p>
         <form className="flex flex-col justify-center w-full mt-0 space-y-3 rounded-md text-[#DBFF5E] p-4"
@@ -36,8 +36,6 @@ const FormLogin: React.FC = () => {
         </form>
         </>
     );
-
-    
 };
 
 export default FormLogin;

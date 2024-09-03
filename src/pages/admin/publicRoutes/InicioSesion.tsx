@@ -1,14 +1,9 @@
-
-import FormLogin from "../../../components/publicComponents/login/FormLogin"
+import FormLogin from "../../../components/publicComponents/login/FormLogin";
 import { Title } from "../../../components/publicComponents/register/Title";
-import { Subtitle } from "../../../components/publicComponents/register/Subtitle";
-import { Information } from "../../../components/publicComponents/register/Information";
-import { Logos } from "../../../components/publicComponents/register/Logos"
-
 
 export const InicioSesion = () => {
-  
   return (
+
    <>
    <section className="flex flex-col justify-center items-center h-screen w-full md:container md:mx-auto animate-blurred-fade-in">
 
@@ -31,16 +26,15 @@ export const InicioSesion = () => {
                 <p className="text-[#DBFF5E]">¿No tienes una cuenta aún? <a href="Register" className="text-[#faffe7]">Registrate </a></p>
                 <a href="/forgot-password" className="text-white "> Olvide mi contraseña</a>
 
-                </section>
 
-               
-              </div> 
-            </section>
+        <section className="flex w-full justify-center md:justify-start mt-4 px-4">
+            <p className="text-white text-center md:text-left ml-0 md:ml-5 mt-20">
+              ¿Problemas al iniciar sesión? <a href="forgot-password" className="text-[#DBFF5E]">Reestablece tu contraseña</a>
+            </p>
           </section>
-        </div>
-      </article>
-   </section>
-   </>
-  )
-}
-  
+      </section>
+    </>
+  );
+};
+
+
